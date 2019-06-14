@@ -1,0 +1,26 @@
+{
+  "actions": [
+    {
+      "description": "Default Welcome Intent",
+      "name": "MAIN",
+      "fulfillment": {
+        "conversationName": "flight information"
+      },
+      "intent": {
+        "name": "actions.intent.MAIN",
+        "trigger": {
+          "queryPatterns": [
+            "talk to flight information"
+          ]
+        }
+      }
+    }
+  ],
+  "conversations": {
+    "flight information": {
+      "name": "flight information",
+      "url": "https://6b41265c.ngrok.io/webhooks/google_assistant/webhook"
+    }
+  },
+  "locale": "en"
+}
