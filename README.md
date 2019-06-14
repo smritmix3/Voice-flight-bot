@@ -1,9 +1,4 @@
-# (1.) Train the nlu model
-		''' python nlu_model.py '''
 		
-		trains NLU Model and saves the model under nlu/default/chatter folder 
-		
-
 # Python version required to run this project is 3.6.8
 # List of package and versions requied to run the proc
 	spacy==2.1.1
