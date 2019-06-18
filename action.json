@@ -19,7 +19,7 @@
   "conversations": {
     "flight information": {
       "name": "flight information",
-      "url": "https://6b41265c.ngrok.io/webhooks/google_assistant/webhook"
+      "url": "https://40fd3136.ngrok.io/webhooks/google_assistant/webhook"
     }
   },
   "locale": "en"

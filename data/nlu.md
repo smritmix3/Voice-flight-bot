@@ -10,14 +10,22 @@
 
 ## intent:inform
 -[DEL](location)
+-[Delhi](location)
 -[BOM](location)
+-[Mumbai](location)
+-[Bombay](location)
 -[CCU](location)
+-[Kolkata](location)
 -[BLR](location)
+-[Bangalore](location)
 -[HYD](location)
+-[Hyderabad](location)
 -[MAA](location)
+-[Chennai](location)
 -[PNQ](location)
 -[IXC](location)
 -[09-01-2019](date)
+-[today](date)
 - I want for [09-02-2019](date)
 - i want to travel on [21-04-2019](date)
 

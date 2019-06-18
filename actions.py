@@ -25,6 +25,18 @@ class SaveOrigin(Action):
 		
 	def run(self, dispatcher, tracker, domain):
 		orig = next(tracker.get_latest_entity_values("location"), None)
+		if orig == 'Bangalore':
+			orig = 'BLR'
+		elif orig == 'Delhi':
+			orig = 'DEL'
+		elif orig == 'Mumbai':
+			orig = 'BOM'
+		elif orig == 'Hyderabad':
+			orig='HYD'
+		elif orig == 'Chennai':
+			orig = 'MAA'
+		elif orig == 'Kolkata':
+			orig = 'CCU'	
 		if not orig:
 			dispatcher.utter_message("Please enter a valid airport code")
 			return [UserUtteranceReverted()]
@@ -38,6 +50,18 @@ class SaveDestination(Action):
 		
 	def run(self, dispatcher, tracker, domain):
 		dest = next(tracker.get_latest_entity_values("location"), None)
+		if dest == 'Bangalore':
+			dest = 'BLR'
+		elif dest == 'Delhi':
+			dest = 'DEL'
+		elif dest == 'Mumbai':
+			dest = 'BOM'
+		elif dest == 'Hyderabad':
+			dest='HYD'
+		elif dest == 'Chennai':
+			dest = 'MAA'
+		elif dest == 'Kolkata':
+			dest = 'CCU'
 		if not dest:
 			dispatcher.utter_message("Please enter a valid airport code")
 			return [UserUtteranceReverted()]
@@ -50,6 +74,8 @@ class SaveDate(Action):
 		
 	def run(self, dispatcher, tracker, domain):
 		inp = next(tracker.get_latest_entity_values("date"), None)
+		if inp == 'today':
+			inp = '17-06-2019'
 		if not inp:
 			dispatcher.utter_message("Please enter a valid date")
 			return [UserUtteranceReverted()]
@@ -77,13 +103,16 @@ class getFlightStatus(Action):
 		dat=tracker.get_slot('date')
 		quote_page = "https://flights.makemytrip.com/makemytrip/search/O/O/E/1/0/0/S/V0/{}_{}_{}?contains=false&remove="
 		page=urllib.request.urlopen(quote_page.format(orig,dest,dat))
+		print("-----Page------" + str(page))
 		soup = BeautifulSoup(page, 'html.parser')
 		list1=[]
 		message=soup.find_all('label',attrs={'class':'flL mtop5 mleft3 vallabel'})
+		print("---message --------"+ str(message))
 		dispatcher.utter_message("Here is the list of carriers with their fare")
 		for a in message:
 			list1.append(a.text)	
 		message1=soup.find_all('span',attrs={'class':'flR'})
+		print("---message1 --------"+ str(message1))
 		list2=[]
 		for b in message1:
 			if "Rs." in b.text:
