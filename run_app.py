@@ -1,7 +1,7 @@
 from rasa_core.agent import Agent
 from rasa_core.interpreter import RasaNLUInterpreter
 from ga_connector import GoogleConnector
-from rasa_core.utils import EndpointConfigcc
+from rasa_core.utils import EndpointConfig
 
 action_endpoint = EndpointConfig(url="http://localhost:5055/webhook")
 nlu_interpreter = RasaNLUInterpreter('./models/nlu/default/chatter')
