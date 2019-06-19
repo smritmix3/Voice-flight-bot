@@ -19,6 +19,6 @@ def run_nlu():
 	pprint.pprint(interpreter.parse("CCU"))
 	
 if __name__ == '__main__':
-	train_nlu('./data/nlu.md', './config/config.yml', './models/nlu')
+	train_nlu('./data/nlu', './config/config.yml', './models/nlu')
 	run_nlu()
 
